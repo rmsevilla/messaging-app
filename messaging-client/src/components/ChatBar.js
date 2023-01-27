@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import "./ChatBar.css";
 
 const ChatBar = ({socket}) => {
   const [users,setUsers] = useState([]);

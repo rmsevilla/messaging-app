@@ -2,6 +2,7 @@ import React,{useEffect,useState,useRef}from 'react';
 import ChatBar from './ChatBar';
 import ChatBody from './ChatBody';
 import ChatFooter from './ChatFooter';
+import "./ChatPage.css";
 
 const ChatPage = ({ socket }) => {
 
@@ -22,7 +23,7 @@ const ChatPage = ({ socket }) => {
         socket.on('messageResponse', (data) => setMessages([...messages, data]));
       }, [socket, messages]);
 
-      useEffect(() => {
+    useEffect(() => {
         // scroll to bottom every time messages change
         lastMessageRef.current?.scrollIntoView({ behavior: 'smooth' });
       }, [messages]);

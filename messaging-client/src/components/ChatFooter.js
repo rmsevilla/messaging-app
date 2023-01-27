@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "./ChatFooter.css";
 
 const ChatFooter = ({socket}) => {
   const [message, setMessage] = useState('');
