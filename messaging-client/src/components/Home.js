@@ -1,19 +1,14 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Home = () => {
+const Home = ({socket}) => {
   const navigate = useNavigate();
   const [userName, setUserName] = useState('');
-//   let userID = localStorage.getItem("userID");
-//   if(userID == null){
-//     localStorage.setItem("userID",1);
-//   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
     localStorage.setItem('userName', userName);
-    // localStorage.setItem('userName'+userID, userName);
-    // localStorage.setItem("userID",userID + 1);
+    socket.emit('newUser',{userName,socketID:socket.id});//this is new user event 
     navigate('/chat');
   };
   return (

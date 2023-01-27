@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 const ChatFooter = ({socket}) => {
   const [message, setMessage] = useState('');
 
+  const handleTyping = () =>
+    socket.emit('typing', `${localStorage.getItem('userName')} is typing`);
+
   const handleSendMessage = (e) => {
     e.preventDefault();
     //this is truthy. but if userName do not exist, getItem return null, which is falsy
@@ -13,6 +16,7 @@ const ChatFooter = ({socket}) => {
           id: `${socket.id}${Math.random()}`,
           socketID: socket.id,
         });
+        socket.emit('doneTyping',"");
       }
     setMessage('');
   };
@@ -25,6 +29,7 @@ const ChatFooter = ({socket}) => {
           className="message"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
+          onKeyDown={handleTyping}
         />
         <button className="sendBtn">SEND</button>
       </form>
