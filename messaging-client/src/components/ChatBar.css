@@ -22,13 +22,13 @@
 }
 .chat__users__dark > * {
   margin-bottom: 10px;
-  color: #607eaa;
+  color: #121212;
   font-size: 14px;
 }
 
 .chat__sidebar__dark {
   height: 100%;
-  background-color: #54441a51;
+  background-color: #1d160551;
   flex: 0.2;
   padding: 20px;
   border-right: 1px solid #fdfdfd;

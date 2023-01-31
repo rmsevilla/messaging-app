@@ -23,7 +23,7 @@ const ChatBody = ({messages,lastMessageRef,typingStatus,isLightTheme,handleSwitc
       <>
         <header className="chat__mainHeader">
           <p>Hangout with Colleagues</p>
-          <button className='switch__theme__btn' onClick={handleSwitchThemeChild}> Switch Theme</button>
+          <button className='switch__theme__btn' onClick={handleSwitchThemeChild}> Switch To Dark Theme</button>
           <button className="leaveChat__btn" onClick={handleLeaveChat}>
             LEAVE CHAT
           </button>
@@ -64,7 +64,7 @@ const ChatBody = ({messages,lastMessageRef,typingStatus,isLightTheme,handleSwitc
     return(<>
         <header className="chat__mainHeader__dark">
           <p>Hangout with Colleagues</p>
-          <button className='switch__theme__btn__dark' onClick={handleSwitchTheme}> Switch Theme</button>
+          <button className='switch__theme__btn__dark' onClick={handleSwitchTheme}> Switch To Light Theme</button>
           <button className="leaveChat__btn__dark" onClick={handleLeaveChat}>
             LEAVE CHAT
           </button>
