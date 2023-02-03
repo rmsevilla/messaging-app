@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "./ChatFooter.css";
 
-const ChatFooter = ({socket}) => {
+const ChatFooter = ({socket,isLightTheme}) => {
   const [message, setMessage] = useState('');
 
   const handleTyping = () =>
@@ -21,21 +21,42 @@ const ChatFooter = ({socket}) => {
       }
     setMessage('');
   };
-  return (
-    <div className="chat__footer">
-      <form className="form" onSubmit={handleSendMessage}>
-        <input
-          type="text"
-          placeholder="Write message"
-          className="message"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          onKeyDown={handleTyping}
-        />
-        <button className="sendBtn">SEND</button>
-      </form>
-    </div>
-  );
+
+  if(isLightTheme){
+    return (
+      <div className="chat__footer">
+        <form className="form" onSubmit={handleSendMessage}>
+          <input
+            type="text"
+            placeholder="Write message"
+            className="message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            onKeyDown={handleTyping}
+          />
+          <button className="sendBtn">SEND</button>
+        </form>
+      </div>
+    );
+  }
+  else{
+    return (
+      <div className="chat__footer__dark">
+        <form className="form" onSubmit={handleSendMessage}>
+          <input
+            type="text"
+            placeholder="Write message"
+            className="message__dark"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            onKeyDown={handleTyping}
+          />
+          <button className="sendBtn__dark">SEND</button>
+        </form>
+      </div>
+    );
+  }
+  
 };
 
 export default ChatFooter;

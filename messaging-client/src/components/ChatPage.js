@@ -9,6 +9,12 @@ const ChatPage = ({ socket }) => {
     const [messages,setMessages] =  useState([]);
     const [typingStatus, setTypingStatus] = useState('');
     const lastMessageRef = useRef(null);
+    const [isLightTheme,setTheme] = useState(true); // true for light theme, false for dark theme
+    
+    const handleSwitchTheme = () =>{
+      setTheme(!isLightTheme);
+    }
+  
 
     useEffect(()=>{
       socket.on('typingResponse',(data)=>setTypingStatus(data));
@@ -30,10 +36,10 @@ const ChatPage = ({ socket }) => {
 
   return (
     <div className="chat">
-      <ChatBar socket={socket}/>
+      <ChatBar socket={socket} isLightTheme={isLightTheme}/>
       <div className="chat__main">
-        <ChatBody messages={messages} lastMessageRef={lastMessageRef} typingStatus={typingStatus}/>
-        <ChatFooter socket = {socket}/>
+        <ChatBody messages={messages} lastMessageRef={lastMessageRef} typingStatus={typingStatus} handleSwitchTheme={handleSwitchTheme} isLightTheme={isLightTheme}/>
+        <ChatFooter socket = {socket}  isLightTheme={isLightTheme}/>
       </div>
     </div>
   );
