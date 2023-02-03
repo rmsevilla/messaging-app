@@ -58,3 +58,89 @@
     color: #eae3d2;
   }
 
+  .switch__theme__btn{
+    padding: 10px;
+    width: 150px;
+    border: none;
+    outline: none;
+    background-color: blue;
+    cursor: pointer;
+    color: #eae3d2;
+  }
+
+  /*-----------------dark theme below---------------------*/
+
+  .chat__mainHeader__dark {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color:#585656;
+  }
+
+  .chat__mainHeader__dark > p {
+    color: #eee;
+  }
+
+  .message__container__dark {
+    width: 100%;
+    height: 80vh;
+    background-color: gray;
+    padding: 20px;
+    overflow-y: scroll;
+  }
+  
+  .message__container__dark > * {
+    margin-bottom: 10px;
+  }
+
+  .message__recipient__dark {
+    background-color: #f5ccc2;
+    width: 300px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+  }
+  .message__sender__dark {
+    background-color: rgb(194, 243, 194);
+    max-width: 300px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: auto;
+    font-size: 15px;
+  }
+  .message__chats__dark > p {
+    font-size: 13px;
+  }
+  .sender__name__dark {
+    text-align: right;
+  }
+  .message__status__dark {
+    position: fixed;
+    bottom: 150px;
+    font-size: 13px;
+    font-style: italic;
+  }
+
+  .leaveChat__btn__dark {
+    padding: 10px;
+    width: 150px;
+    border: none;
+    outline: none;
+    background-color: #d1512d;
+    cursor: pointer;
+    color: #eae3d2;
+  }
+
+  .switch__theme__btn__dark{
+    padding: 10px;
+    width: 150px;
+    border: none;
+    outline: none;
+    background-color: blue;
+    cursor: pointer;
+    color: #eae3d2;
+  }
+
